@@ -2,6 +2,6 @@
 	<p><%=  product.title %></p>
 	<%= link_to(product_path(product)) do %><%= image_tag(product.image.medium.url, class: "product-image") %><% end %>
 	<p>价格: ￥<%= product.price %></p>
-	<p>描述: ￥<%= product.description %></p>
-	<p>库存: ￥<%= product.storage %></p>
+	<p>描述: <%= product.description %></p>
+	<p>库存: <%= product.storage %></p>
 </div>
