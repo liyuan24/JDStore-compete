@@ -9,6 +9,45 @@ footer{
 	bottom: 0;
 }
 
+nav{
+	background-color: rgb(35, 47, 62);
+}
+
+#navbar-title{
+	color: white;
+}
+
+#navbar-list{
+	color: white;
+	position: absolute;
+	right: 5%;
+}
+
+#navbar-list-item-3{
+	color: white;
+}
+
+#navbar-list-item-3:hover{
+	background-color: rgb(35, 47, 62);
+}
+
+#navbar-list-item-1{
+	color: white;
+}
+
+#navbar-list-item-1:hover{
+	background-color: rgb(35, 47, 62);
+}
+
+#navbar-list-item-2{
+	color: white;
+}
+
+#navbar-list-item-2:hover{
+	background-color: rgb(35, 47, 62);
+}
+
+
 .side-bar{
 	position: absolute;
 	right: 0;
@@ -29,4 +68,14 @@ footer{
 	width: 100%;
 	heigth: auto;
 }
+
+.search-bar{
+	display: inline-block;
+	width: 50%;
+	position: absolute;
+	top: 9px;
+	left: 15%;
+}
+
+
 
