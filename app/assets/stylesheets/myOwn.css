@@ -9,3 +9,19 @@ footer{
 	position: absolute;
 	right: 0;
 }
+
+.product-item{
+	display: inline-block;
+	width: 30%;
+	margin: 5px;
+	padding: 5px;
+}
+
+.product-item:hover{
+	border: 1px solid red;
+}
+
+.product-image{
+	width: 100%;
+	heigth: auto;
+}
