@@ -17,6 +17,9 @@
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 						<i class="fa fa-user" aria-hidden="true"></i><%= current_user.user_name %><span class="caret"></span>
 						<ul class="dropdown-menu">
+							<% if current_user.is_admin %>
+								<li><%= link_to("Admin Panel", admin_products_path) %></li>
+							<% end %>
 							<li><%= link_to(destroy_user_session_path, method: :delete) do %><i class="fa fa-sign-out" aria-hidden="true"></i>登出<% end %></li>
 						</ul>
 					</a>

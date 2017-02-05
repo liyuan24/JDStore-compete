@@ -4,3 +4,8 @@ footer{
 	position: absolute;
 	bottom: 0;
 }
+
+.side-bar{
+	position: absolute;
+	right: 0;
+}
