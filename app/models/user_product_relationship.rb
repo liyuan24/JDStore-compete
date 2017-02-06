@@ -1,0 +1,2 @@
+class UserProductRelationship < ApplicationRecord
+end
