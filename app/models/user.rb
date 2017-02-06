@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :user_product_relationships
   has_many :favorites, :through => :user_product_relationships, :source => :product
+  has_many :reviews
 
   def favor!(product)
   	favorites.push(product)
