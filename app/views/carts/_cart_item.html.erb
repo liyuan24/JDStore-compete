@@ -1,0 +1,8 @@
+<tr>
+	<td>
+		<%= link_to(product_path(cart_item.product)) do %><%= image_tag(cart_item.product.image.thumb.url) %><% end %>
+	</td>
+	<td><%= link_to(cart_item.product.title, product_path(cart_item.product)) %></td>
+	<td><%= cart_item.product.price %></td>
+	<td><%= cart_item.quantity %></td>
+</tr>

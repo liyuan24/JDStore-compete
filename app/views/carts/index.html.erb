@@ -1,0 +1,26 @@
+<div class="container-fluid">
+	<div class="col-md-12">
+		<h2 style="text-align: center;">购物车列表</h2>
+		<hr>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th colspan="2">商品资讯</th>
+					<th>单价</th>
+					<th>数量</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%= render :partial => "cart_item", :collection => @cart_items, :as => :cart_item %>
+			</tbody>
+		</table>
+		<br>
+		<div>
+			<span class="pull-right">总计 xxx RMB</span>
+		</div>
+		<hr>
+		<div>
+			<%= link_to("确认结账", "#", class:"btn btn-danger pull-right", method: :post) %>
+		</div>
+	</div>
+</div>
