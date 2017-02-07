@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   	member do
   		post :favor
   		post :unfavor
+  		post :add_to_cart
   	end
   end
   namespace :admin do

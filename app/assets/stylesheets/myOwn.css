@@ -176,6 +176,29 @@ nav{
 	color: red;
 }
 
+.cart-item-count-super{
+	vertical-align: super;
+	border-radius: 60%;
+	background-color: red;
+	color: white;
+	display: inline-block;
+	position: absolute;
+	top: 6px;
+	text-align: center;
+	line-height: 14px;
+	font-size: 3px;
+	width: 15px;
+	height: 15px;
+}
+
+#navbar-cart{
+	padding-bottom: 10px;
+	color: red;
+}
+
+#navbar-cart:hover{
+	background-color: rgb(35, 47, 62);
+}
 
 
 

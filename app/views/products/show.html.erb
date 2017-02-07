@@ -5,4 +5,4 @@
 	<p>描述: <%= @product.description %></p>
 	<p>库存: <%= @product.storage %></p>
 </div>
-<%= link_to("加入购物车", "#", class: "btn btn-danger") %>
+<%= link_to("加入购物车", add_to_cart_product_path(@product), class: "btn btn-danger", method: :post) %>

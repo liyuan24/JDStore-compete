@@ -26,6 +26,12 @@ class ProductsController < ApplicationController
 		redirect_to products_path
 	end
 
+	def add_to_cart
+		@product = Product.find(params[:id])
+		current_cart.add_product_to_cart(@product)
+		redirect_to :back, notice: "加入购物车"
+	end
+
 	protected
 
 	def validate_query_string

@@ -10,6 +10,11 @@
 	<div class="collapse navbar-collapse" id="navbar-1">
 		<%= render "common/search_bar" %>
 		<ul class="nav navbar-nav pull-right" id="navbar-list">
+			<li>
+				<%= link_to("#", id: "navbar-cart") do %>
+					<i class="fa fa-shopping-cart" aria-hidden="true"></i>我的购物车<span class="cart-item-count-super"><%= current_cart.products.count %></span>
+				<% end %>
+			</li>
 			<% if !current_user %>
 				<li><%= link_to( new_user_registration_path, id: "navbar-list-item-1") do %><i class="fa fa-user" aria-hidden="true"></i>注册<% end %></li>
 				<li><%= link_to( new_user_session_path, id: "navbar-list-item-2" ) do %><i class="fa fa-sign-in" aria-hidden="true"></i>登入<% end %></li>
