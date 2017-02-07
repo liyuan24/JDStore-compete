@@ -1,7 +1,10 @@
 <tr>
 	<td><%= product.id %></td>
-	<td><%= image_tag(product.image.thumb.url) %></td>
+	<% unless product.image.blank? %>
+		<td><%= image_tag(product.image.thumb.url) %></td>
+	<% end %>
 	<td><%= product.title %></td>
 	<td><%= product.price %></td>
 	<td><%= product.storage %></td>
+	<td><%= link_to("Delete", admin_product_path(product), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-sm") %></td>
 </tr>
