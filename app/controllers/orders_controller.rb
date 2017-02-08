@@ -1,11 +1,13 @@
 class OrdersController < ApplicationController
 	before_action :authenticate_user!, only: [:create]
+	# after_create :clean_cart
 	def create
 		@order = Order.new(order_params)
 		@order.user = current_user
 		@order.total = current_cart.total_price
 		if @order.save
 			create_product_list
+			clean_cart
 			redirect_to order_path(@order.token)
 		else
 			render "carts/checkout"
@@ -32,5 +34,9 @@ class OrdersController < ApplicationController
 			product_list.quantity = cart_item.quantity
 			product_list.save
 		end
+	end
+
+	def clean_cart
+		current_cart.clean!
 	end
 end

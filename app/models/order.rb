@@ -7,4 +7,5 @@ class Order < ApplicationRecord
 	def generate_random_token
 		self.token = SecureRandom.uuid
 	end
+
 end
