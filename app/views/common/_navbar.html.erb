@@ -26,6 +26,7 @@
 							<% if current_user.is_admin %>
 								<li><%= link_to("Admin Panel", admin_products_path) %></li>
 							<% end %>
+							<li><%= link_to("我的订单", account_orders_path) %></li>
 							<li><%= link_to(destroy_user_session_path, method: :delete) do %><i class="fa fa-sign-out" aria-hidden="true"></i>登出<% end %></li>
 						</ul>
 					</a>
