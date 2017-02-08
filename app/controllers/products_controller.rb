@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
-
+	before_action :authenticate_user!, only: [:favor, :unfavor]
 	before_action :validate_query_string, only: [:search]
+
 
 	def index
 		@products = Product.all

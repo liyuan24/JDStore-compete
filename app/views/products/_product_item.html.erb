@@ -7,12 +7,16 @@
 	<p>描述: <%= product.description %></p>
 	<p>库存: <%= product.storage %></p>
 	<p>
-		<% if current_user.favorites_include?(product) %>
-			<span>
-				<%= link_to(unfavor_product_path(product),  method: :post, class: "favor-button-full") do %>
-					<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-				<% end %>
-			</span>
+		<% if current_user %>
+			<% if current_user.favorites.include?(product) %>
+				<span>
+					<%= link_to(unfavor_product_path(product),  method: :post, class: "favor-button-full") do %>
+						<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+					<% end %>
+				</span>
+			<% else %>
+				
+			<% end %>
 		<% else %>
 			<span>
 				<%= link_to(favor_product_path(product), method: :post, class: "favor-button-empty") do %>
