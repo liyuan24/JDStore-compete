@@ -37,6 +37,7 @@ class ProductsController < ApplicationController
 		
 	end
 
+
 	protected
 
 	def validate_query_string
