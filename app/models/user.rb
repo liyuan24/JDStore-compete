@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :orders
 
+  ratyrate_rater
+
   def favor!(product)
   	favorites.push(product)
   end

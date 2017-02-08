@@ -11,8 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
+//= require ratyrate
+//= require jquery.raty
 //= require jquery_ujs
-//= require turbolinks
+// = require turbolinks
 //= require bootstrap-sprockets
 //= require slideImage
 //= require_tree .
