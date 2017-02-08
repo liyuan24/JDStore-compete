@@ -1,0 +1,31 @@
+<div class="container-fluid">
+	<div class="col-md-12">
+		<h2>订单明细</h2>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>商品名称</th>
+					<th>商品价格</th>
+					<th>商品数量</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%= render :partial => "product_list", :collection => @product_lists, :as => :product_list %>
+			</tbody>
+		</table>
+		<br>
+		<div>
+			<span class="pull-right" >总计：￥<%= @order.total %></span>
+		</div>
+		<hr>
+		<h2>寄送信息</h2>
+		<div class="panel panel-default">
+			<div class="panel-heading">寄送人</div>
+			<div class="panel-body"><%= @order.billing_name %> - <%= @order.billing_address %></div>
+		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading">收件人</div>
+			<div class="panel-body"><%= @order.receive_name %> - <%= @order.receive_address %></div>
+		</div>
+	</div>
+</div>
