@@ -5,4 +5,8 @@ class Product < ApplicationRecord
 	has_many :reviews
 
 	ratyrate_rateable "quality", "packing", "delivery_speed", "delivery_attitude"
+
+	def average_score
+		self.average("quality").avg
+	end
 end
