@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-	before_update :get_stars
+	before_create :get_stars
 	belongs_to :user
 	belongs_to :product
 
@@ -13,4 +13,8 @@ class Review < ApplicationRecord
 			self.good = true	
 		end
 	end
+
+	scope :good, -> {where(:good => true)}
+	scope :fair, -> {where(:fair => true)}
+	scope :bad, -> {where(:bad => true)}
 end
