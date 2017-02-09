@@ -2,6 +2,10 @@
 	box-sizing: border-box;
 }
 
+html, body{
+	height: 100%;
+}
+
 footer{
 	width: 100%;
 	text-align: center;
@@ -420,5 +424,49 @@ li.review-item{
 	margin-top: 5px;
 }
 
+.review-percent{
+	width: 70%;
+	margin: auto;
+	padding: 20px;
+}
+
+.good-percent-big{
+	width: 30%;
+	display: inline-block;
+	padding-bottom: 10px;
+}
+
+.good-percent-number{
+	font-size: 40px;
+	color: red;
+}
+
+.percent-bar{
+	width: 65%;
+	display: inline-block;
+}
+
+.bar-container{
+	width: 80%;
+}
+
+.bar-text{
+	width: 20%;
+	display: inline-block;
+}
+
+.bar-border{
+	display: inline-block;
+	background-color: #FAFAFA;
+	height: 20px;
+	width: 30%;
+	padding: 0;
+}
+
+.bar-content{
+	display: inline-block;
+	background-color: red;
+	height: 100%;
+}
 
 

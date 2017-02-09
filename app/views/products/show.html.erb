@@ -18,8 +18,36 @@
 </div>
 
 
-<div class="container-fluid">
+<div class="container-fluid comment-container">
 	<div class="review-header">商品评价</div>
+	<div class="review-percent">
+		<div class="good-percent-big">
+			<div class="good-percent-number">
+				<%= @good_percent * 100 %>%
+			</div><br>
+			好评率
+		</div>
+		<div class="percent-bar">
+			<div class="bar-container">
+				<div class="bar-text">好评(<%= @good_percent * 100 %>%)</div>
+				<div class="bar-border">
+					<div class="bar-content" style="width: <%= @good_percent * 100 %>%; height: 100%;"></div>
+				</div>
+			</div><br>
+			<div class="bar-container">
+				<div class="bar-text">中评(<%= @fair_percent * 100 %>%)</div>
+				<div class="bar-border">
+					<div class="bar-content" style="width: <%= @fair_percent * 100 %>%;"></div>
+				</div>
+			</div><br>
+			<div class="bar-container">
+				<div class="bar-text">差评(<%= @bad_percent * 100 %>%)</div>
+				<div class="bar-border">
+					<div class="bar-content" style="width: <%= @bad_percent * 100 %>%;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="review-select">
 		<ul class="review-bar">
 			<li class="review-item"><%= link_to(product_path(@product), class: "review-category") do %>全部评价(<%= @product.reviews.count %>)<% end %></li>
