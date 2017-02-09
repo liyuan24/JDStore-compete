@@ -22,10 +22,16 @@
 	<div class="review-header">商品评价</div>
 	<div class="review-select">
 		<ul class="review-bar">
-			<li class="review-item"><%= link_to("全部评价", product_path(@product), class: "review-category") %></li>
-			<li class="review-item"><%= link_to("好评", product_path(@product, :review_cate => "good"), class: "review-category") %></li>
-			<li class="review-item"><%= link_to("中评", product_path(@product, :review_cate => "fair"), class: "review-category") %></li>
-			<li class="review-item"><%= link_to("差评", product_path(@product, :review_cate => "bad"), class: "review-category") %></li>
+			<li class="review-item"><%= link_to(product_path(@product), class: "review-category") do %>全部评价(<%= @product.reviews.count %>)<% end %></li>
+			<li class="review-item">
+				<%= link_to(product_path(@product, :review_cate => "good"), class: "review-category" ) do %>好评(<%= @product.reviews.good.count %>)<% end %>
+			</li>
+			<li class="review-item">
+				<%= link_to(product_path(@product, :review_cate => "fair"), class: "review-category") do %>中评(<%= @product.reviews.fair.count %>)<% end %>
+			</li>
+			<li class="review-item">
+				<%= link_to(product_path(@product, :review_cate => "bad"), class: "review-category") do %>差评(<%= @product.reviews.bad.count %>)<% end %>
+			</li>
 		</ul>
 	</div>
 	<div class="review-container">
