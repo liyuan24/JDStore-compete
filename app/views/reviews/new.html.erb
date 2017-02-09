@@ -1,0 +1,31 @@
+<div class="container-fluid">
+	<div class="col-md-12">
+		<h3 style="text-align: center;">评价订单</h3>
+		<div class="delivery-review">
+			<div class="delivery-review-title">配送服务</div>
+			<div class="delivery-review-content">
+				<div class="delivery-review-item">配送速度 <%= rating_for @product, "delivery_speed", star: 5 %></div>
+				<div class="delivery-review-item">商品包装 <%= rating_for @product, "packing", star: 5 %></div>
+				<div class="delivery-review-item">配送态度 <%= rating_for @product, "delivery_attitude", star: 5 %></div>
+			</div>
+		</div>
+		<%= simple_form_for @review do |f| %>
+			<div class="quality-review-text">
+				<%= f.input :content, input_html: { class: "quality-review-text-input" } %>
+			</div>
+			<div class="review-submit">
+				<%= f.submit "提交", class: "btn btn-danger btn-lg" %>
+			</div>
+		<% end %>
+		<div class="quality-review">
+				<div class="quality-review-title">
+					<%= link_to(image_tag(@product.image.thumb.url), product_path(@product)) %><br>
+					<%= link_to(@product.title, product_path(@product)) %><br>
+					￥<%= @product.price %>
+				</div>
+				<div class="quality-review-content">
+					<div class="quality-review-stars">商品满意度 <%= rating_for @product, "quality", star: 5 %></div>
+				</div>
+			</div>
+	</div>
+</div>

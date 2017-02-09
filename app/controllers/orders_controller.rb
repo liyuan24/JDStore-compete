@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-	before_action :authenticate_user!, only: [:create]
+	before_action :authenticate_user!
 	# after_create :clean_cart
 	def create
 		@order = Order.new(order_params)
@@ -30,7 +30,8 @@ class OrdersController < ApplicationController
 			product_list = ProductList.new
 			product_list.order = @order
 			product_list.product_name = cart_item.product.title
-			product_list.product_price = cart_item.product.price 
+			product_list.product_price = cart_item.product.price
+			product_list.product_id = cart_item.product.id 
 			product_list.quantity = cart_item.quantity
 			product_list.save
 		end

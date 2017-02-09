@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
   resources :cart_items
   resources :orders
+  resources :reviews
 
   namespace :admin do
   	resources :products
