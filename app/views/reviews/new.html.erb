@@ -4,9 +4,9 @@
 		<div class="delivery-review">
 			<div class="delivery-review-title">配送服务</div>
 			<div class="delivery-review-content">
-				<div class="delivery-review-item">配送速度 <%= rating_for @product, "delivery_speed", star: 5 %></div>
-				<div class="delivery-review-item">商品包装 <%= rating_for @product, "packing", star: 5 %></div>
-				<div class="delivery-review-item">配送态度 <%= rating_for @product, "delivery_attitude", star: 5 %></div>
+				<div class="delivery-review-item">配送速度 <%= rating_for @product, "delivery_speed", star: 5, disable_after_rate: true %></div>
+				<div class="delivery-review-item">商品包装 <%= rating_for @product, "packing", star: 5, disable_after_rate: true %></div>
+				<div class="delivery-review-item">配送态度 <%= rating_for @product, "delivery_attitude", star: 5, disable_after_rate: true %></div>
 			</div>
 		</div>
 		<%= simple_form_for @review do |f| %>
@@ -24,7 +24,7 @@
 					￥<%= @product.price %>
 				</div>
 				<div class="quality-review-content">
-					<div class="quality-review-stars">商品满意度 <%= rating_for @product, "quality", star: 5 %></div>
+					<div class="quality-review-stars">商品满意度 <%= rating_for @product, "quality", star: 5, disable_after_rate: true %></div>
 				</div>
 			</div>
 	</div>

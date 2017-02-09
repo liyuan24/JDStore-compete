@@ -3,7 +3,7 @@
 		<div class="user-info"><%= review.user.user_name %></div>
 	</div>
 	<div class="comment-column">
-		<div class="comment-star"><%= rating_for_user @product, review.user, "quality" %></div>
+		<div class="comment-star"><%= rating_for_user @product, review.user, "quality", readonly: true %></div>
 		<p class="comment-con"><%= review.content %></p>
 		<div class="comment-message"><%= review.created_at.strftime("%Y-%m-%d") %></div>
 	</div>
