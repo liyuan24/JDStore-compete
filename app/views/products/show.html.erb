@@ -17,14 +17,15 @@
 	<p>质量: <%= rating_for @product, "quality", star: 5, enable_half: true, readonly: true %></p>
 </div>
 
+
 <div class="container-fluid">
 	<div class="review-header">商品评价</div>
 	<div class="review-select">
 		<ul class="review-bar">
-			<li class="review-item"><%= link_to("全部评价", "#", class: "review-category") %></li>
-			<li class="review-item"><%= link_to("好评", "#", class: "review-category") %></li>
-			<li class="review-item"><%= link_to("中评", "#", class: "review-category") %></li>
-			<li class="review-item"><%= link_to("差评", "#", class: "review-category") %></li>
+			<li class="review-item"><%= link_to("全部评价", product_path(@product), class: "review-category") %></li>
+			<li class="review-item"><%= link_to("好评", product_path(@product, :review_cate => "good"), class: "review-category") %></li>
+			<li class="review-item"><%= link_to("中评", product_path(@product, :review_cate => "fair"), class: "review-category") %></li>
+			<li class="review-item"><%= link_to("差评", product_path(@product, :review_cate => "bad"), class: "review-category") %></li>
 		</ul>
 	</div>
 	<div class="review-container">

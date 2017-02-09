@@ -13,8 +13,7 @@
 				<%= product_list.product_id %>
 				<div class="order-list-quantity"><%= product_list.quantity %></div>
 				<div class="order-list-total">总额: <%= product_list.quantity * product_list.product_price %></div>
-
-				<div class="order-list-review"><%= link_to("评价", new_review_path(:product_id => product_list.product_id)) %></div>
+				<div class="order-list-review"><%= link_to("评价", new_product_review_path(product_list.product_id), class: "btn btn-danger") %></div>
 			</div>
 		<% end %>
 	</div>

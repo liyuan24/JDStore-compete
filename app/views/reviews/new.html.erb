@@ -1,7 +1,7 @@
-<div class="container-fluid">
+<div class="container-fluid review-container">
 	<div class="col-md-12">
 		<h3 style="text-align: center;">评价订单</h3>
-		<div class="delivery-review">
+		<div class="delivery-review clearfix">
 			<div class="delivery-review-title">配送服务</div>
 			<div class="delivery-review-content">
 				<div class="delivery-review-item">配送速度 <%= rating_for @product, "delivery_speed", star: 5, disable_after_rate: true %></div>
@@ -9,23 +9,26 @@
 				<div class="delivery-review-item">配送态度 <%= rating_for @product, "delivery_attitude", star: 5, disable_after_rate: true %></div>
 			</div>
 		</div>
-		<%= simple_form_for @review do |f| %>
-			<div class="quality-review-text">
-				<%= f.input :content, input_html: { class: "quality-review-text-input" } %>
+		<div class="quality-review clearfix">
+			<div class="quality-review-title">
+				<%= link_to(image_tag(@product.image.thumb.url), product_path(@product)) %><br>
+				<%= link_to(@product.title, product_path(@product)) %><br>
+				￥<%= @product.price %>
 			</div>
-			<div class="review-submit">
-				<%= f.submit "提交", class: "btn btn-danger btn-lg" %>
+			<div class="quality-review-content">
+				<div class="quality-review-stars">商品满意度 <%= rating_for @product, "quality", star: 5, disable_after_rate: true %></div>
 			</div>
-		<% end %>
-		<div class="quality-review">
-				<div class="quality-review-title">
-					<%= link_to(image_tag(@product.image.thumb.url), product_path(@product)) %><br>
-					<%= link_to(@product.title, product_path(@product)) %><br>
-					￥<%= @product.price %>
+		</div>
+		<%= form_for [@product, @review] do |f| %>
+			<div class="text-review clearfix">
+				<div class="text-review-title">评价晒单</div>
+				<div class="text-review-input">
+					<%= f.text_area :content, placeholder: "商品是否给力？快分享您的心得吧~", size: "80x5" %>
 				</div>
-				<div class="quality-review-content">
-					<div class="quality-review-stars">商品满意度 <%= rating_for @product, "quality", star: 5, disable_after_rate: true %></div>
-				</div>
 			</div>
+			<div class="text-review-submit">
+				<div class="text-review-submit-container"><%= f.submit "提交", class: "btn btn-danger btn-block" %></div>
+			</div>	
+		<% end %>	
 	</div>
 </div>

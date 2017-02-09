@@ -3,14 +3,14 @@ class ReviewsController < ApplicationController
 	def new
 		@review = Review.new
 		@product = Product.find(params[:product_id])
-		@review.product = @product
-		@review.user = current_user
-		@review.save
 	end
 
-	def update
-		@review = Review.find(params[:id])
-		if @review.update(review_params)
+	def create
+		@product = Product.find(params[:product_id])
+		@review = Review.new(review_params)
+		@review.user = current_user
+		@review.product = @product
+		if @review.save
 			redirect_to account_orders_path
 		else
 			render :new

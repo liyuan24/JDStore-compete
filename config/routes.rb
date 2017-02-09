@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "products#index"
   resources :products do
+  	resources :reviews
   	collection do
   		get :search
   	end
@@ -23,7 +24,6 @@ Rails.application.routes.draw do
 
   resources :cart_items
   resources :orders
-  resources :reviews
 
   namespace :admin do
   	resources :products
