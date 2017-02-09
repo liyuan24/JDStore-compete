@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-	after_update :get_stars
+	before_update :get_stars
 	belongs_to :user
 	belongs_to :product
 
