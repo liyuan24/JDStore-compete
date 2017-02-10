@@ -10,7 +10,7 @@ class CartsController < ApplicationController
 	end
 
 	def checkout
-		@cart_items = current_cart.cart_items
+		@cart_items = current_cart.cart_items.where(:buy_now => true)
 		@order = Order.new
 	end
 end
