@@ -1,14 +1,25 @@
 <tr>
-	<td>
-		<%= link_to(product_path(cart_item.product)) do %><%= image_tag(cart_item.product.image.thumb.url) %><% end %>
-	</td>
-	<td><%= link_to(cart_item.product.title, product_path(cart_item.product)) %></td>
-	<td><%= cart_item.product.price %></td>
-	<td>
-		<%= form_for cart_item, url: cart_item_path(cart_item.product_id) do |f| %>
-			<%= f.select :quantity, 1..cart_item.product.storage %>
-			<%= f.submit "更新", :data => { disable_with: "Submitting..." } %>
+	<td style="width: 5%;">
+		<% if !cart_item.buy_now %>
+			<%= link_to(cart_item_buy_now_path(cart_item.product_id), method: :post) do %>
+				<input type="checkbox" name="vehicle" value="Car">
+			<% end %>
+		<% else %>
+			<%= link_to(cart_item_not_buy_now_path(cart_item.product_id), method: :post) do %>
+				<input type="checkbox" name="vehicle" value="Car" checked>
+			<% end %>
 		<% end %>
 	</td>
+	<td style="width: 20%;" >
+		<%= link_to(product_path(cart_item.product)) do %><%= image_tag(cart_item.product.image.thumb.url) %><% end %>
+	</td>
+	<td style="width: 30%;"><%= link_to(cart_item.product.title, product_path(cart_item.product)) %></td>
+	<td><%= cart_item.product.price %></td>
+	<td>
+		<%= form_for cart_item, url: cart_item_path(cart_item.product_id, remote: true) do |f| %>
+			<%= f.select :quantity, 1..cart_item.product.storage, class: "select_submit" %>
+		<% end %>
+	</td>
+	<td><strong>￥<%= cart_item.product.price * cart_item.quantity %></strong></td>
 	<td><%= link_to(cart_item_path(cart_item.product_id), method: :delete) do %><i class="fa fa-trash-o" aria-hidden="true"></i><% end %></td>
 </tr>

@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: "registrations" }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "products#index"
+
+  post '/save_data' => 'cart_items#update'
+
   resources :products do
   	resources :reviews
   	collection do
@@ -22,7 +25,10 @@ Rails.application.routes.draw do
   	end
   end
 
-  resources :cart_items
+  resources :cart_items do
+  	post :buy_now
+  	post :not_buy_now
+  end
   resources :orders
 
   namespace :admin do

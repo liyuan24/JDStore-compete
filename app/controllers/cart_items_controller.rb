@@ -18,6 +18,20 @@ class CartItemsController < ApplicationController
 		
 	end
 
+	def buy_now
+		@cart_item = current_cart.cart_items.find_by(product_id: params[:cart_item_id])
+		@cart_item.buy_now = true
+		@cart_item.save
+		redirect_to :back
+	end
+
+	def not_buy_now
+		@cart_item = current_cart.cart_items.find_by(product_id: params[:cart_item_id])
+		@cart_item.buy_now = false
+		@cart_item.save
+		redirect_to :back
+	end
+
 	private
 
 	def cart_item_params

@@ -4,12 +4,14 @@
 		<hr>
 		<%= link_to("清空购物车", clean_carts_path, method: :delete, data: { confirm: "确定要清空购物车吗？" }, 
 		class: "pull-right btn btn-danger", style: "margin-bottom: 10px;") %>
-		<table class="table table-bordered">
+		<table class="table">
 			<thead>
 				<tr>
+					<th>全选</th>
 					<th colspan="2">商品资讯</th>
 					<th>单价</th>
 					<th>数量</th>
+					<th>小计</th>
 					<th>操作</th>
 				</tr>
 			</thead>

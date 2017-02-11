@@ -17,4 +17,5 @@
 // = require turbolinks
 //= require bootstrap-sprockets
 //= require slideImage
+//= cart_change
 //= require_tree .
