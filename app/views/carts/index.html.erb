@@ -33,7 +33,9 @@
 			</div>
 			<hr>
 			<div>
-				<%= link_to("确认结账", checkout_carts_path, class:"btn btn-danger pull-right", method: :post) %>
+				<%= link_to(checkout_carts_path, class:"btn btn-danger pull-right", method: :post) do %>
+					去付款(<%= current_cart.cart_items.where(:buy_now => true).count %>)
+				<% end %>
 			</div>
 		</div>
 	</div>
