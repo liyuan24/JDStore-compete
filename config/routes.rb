@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   	collection do
   		delete :clean
   		post :checkout
+  		post :select_all
+  		post :remove_all
   	end
   end
 

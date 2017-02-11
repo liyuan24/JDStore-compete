@@ -22,12 +22,15 @@ class CartItemsController < ApplicationController
 		@cart_item = current_cart.cart_items.find_by(product_id: params[:cart_item_id])
 		@cart_item.buy_now = true
 		@cart_item.save
+		whether_buy_all
 		redirect_to :back
 	end
 
 	def not_buy_now
 		@cart_item = current_cart.cart_items.find_by(product_id: params[:cart_item_id])
 		@cart_item.buy_now = false
+		@cart_item.cart.select_all = false
+		@cart_item.cart.save
 		@cart_item.save
 		redirect_to :back
 	end
@@ -36,5 +39,19 @@ class CartItemsController < ApplicationController
 
 	def cart_item_params
 		params.require(:cart_item).permit(:quantity)
+	end
+
+	def whether_buy_all
+		dd = true
+		current_cart.cart_items.each do |cart_item|
+			if !cart_item.buy_now
+				dd = false
+				break
+			end
+		end
+		if dd
+			current_cart.select_all = true
+			current_cart.save
+		end
 	end
 end

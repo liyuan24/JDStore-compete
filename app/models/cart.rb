@@ -20,6 +20,24 @@ class Cart < ApplicationRecord
 		return sum
 	end
 
+	def select_all!
+		cart_items.each do |cart_item|
+			cart_item.buy_now = true
+			cart_item.save
+		end
+		self.select_all = true
+		self.save
+	end
+
+	def remove_all!
+		cart_items.each do |cart_item|
+			cart_item.buy_now = false
+			cart_item.save
+		end
+		self.select_all = false
+		self.save
+	end
+
 	def clean!
 		cart_items.destroy_all
 	end
