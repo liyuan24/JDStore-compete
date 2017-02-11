@@ -506,4 +506,18 @@ li.review-item{
 	text-decoration: none;
 }
 
+.cart-item-operation{
+	color: #515760;
+	font-size: 5px;
+}
+
+.cart-item-operation:hover{
+	text-decoration: none;
+	color: red;
+}
+
+#cart-item-row{
+	
+}
+
 

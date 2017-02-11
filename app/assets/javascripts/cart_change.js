@@ -38,7 +38,7 @@
 // });
 
 $(document).ready(function(){
-	$(".checkbox_submit").change(function(){
-		$(this).parents("form:first").submit();
-	});
+	if ($(".checkbox-buy-now").checked{
+		$("#cart-item-row").css("backgroun-color", "#FFF4E8")
+	}
 });
