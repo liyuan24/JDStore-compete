@@ -35,6 +35,28 @@ class CartItemsController < ApplicationController
 		redirect_to :back
 	end
 
+	def plus_quantity
+		@cart_item = current_cart.cart_items.find_by_product_id(params[:cart_item_id])
+		if @cart_item.quantity < @cart_item.product.storage
+			@cart_item.quantity += 1
+			@cart_item.save
+			redirect_to carts_path
+		elsif @cart_item.quantity == @cart_item.product.storage
+			redirect_to carts_path, alert: "您购买的数量已达到库存上限"
+		end
+	end
+
+	def minus_quantity
+		@cart_item = current_cart.cart_items.find_by_product_id(params[:cart_item_id])
+		if @cart_item.quantity > 1
+			@cart_item.quantity -= 1
+			@cart_item.save
+			redirect_to carts_path
+		elsif @cart_item.quantity == 1
+			redirect_to carts_path
+		end
+	end
+
 	private
 
 	def cart_item_params

@@ -30,6 +30,8 @@ Rails.application.routes.draw do
   resources :cart_items do
   	post :buy_now
   	post :not_buy_now
+ 	post :plus_quantity
+ 	post :minus_quantity
   end
   resources :orders
 

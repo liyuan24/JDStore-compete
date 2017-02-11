@@ -13,12 +13,14 @@
 	<td style="width: 20%;" >
 		<%= link_to(product_path(cart_item.product)) do %><%= image_tag(cart_item.product.image.thumb.url) %><% end %>
 	</td>
-	<td style="width: 30%;"><%= link_to(cart_item.product.title, product_path(cart_item.product)) %></td>
-	<td><%= cart_item.product.price %></td>
+	<td style="width: 25%;"><%= link_to(cart_item.product.title, product_path(cart_item.product)) %></td>
+	<td style="width: 8%;">￥<%= cart_item.product.price %></td>
 	<td>
-		<%= form_for cart_item, url: cart_item_path(cart_item.product_id, remote: true) do |f| %>
-			<%= f.select :quantity, 1..cart_item.product.storage, class: "select_submit" %>
-		<% end %>
+		<div class="change-quantity-container">
+			<div class="plus-one"><%= link_to("+", cart_item_plus_quantity_path(cart_item.product_id), class: "one-chara", method: :post) %></div>
+			<div class="cart_item_quantity"><%= cart_item.quantity %></div>
+			<div class="minus-one"><%= link_to("-", cart_item_minus_quantity_path(cart_item.product_id), class: "one-chara", method: :post) %></div>
+		</div>
 	</td>
 	<td><strong>￥<%= cart_item.product.price * cart_item.quantity %></strong></td>
 	<td><%= link_to(cart_item_path(cart_item.product_id), method: :delete) do %><i class="fa fa-trash-o" aria-hidden="true"></i><% end %></td>

@@ -473,4 +473,37 @@ li.review-item{
 	height: 100%;
 }
 
+.change-quantity-container{
+	border: 1px solid #dee3ea;
+	text-align: center;
+	margin-right: 8px;
+}
+
+.plus-one{
+	display: inline-block;
+	width: 25%;
+	border-right: 1px solid #dee3ea;
+}
+
+.minus-one{
+	display: inline-block;
+	width: 25%;
+	border-left: 1px solid #dee3ea;
+	text-align: center;
+}
+
+.cart_item_quantity{
+	display: inline-block;
+	width: 35%;
+	text-align: center;
+}
+
+.one-chara{
+	color: #3a3d42;
+}
+
+.one-chara:hover{
+	text-decoration: none;
+}
+
 
