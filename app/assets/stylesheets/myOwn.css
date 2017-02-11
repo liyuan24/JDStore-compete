@@ -516,8 +516,22 @@ li.review-item{
 	color: red;
 }
 
-#cart-item-row{
-	
+.empty-cart-container{
+	width: 50%;
+	margin: auto;
+	text-align: center;
+	margin-top: 200px;
+	margin-bottom: 100px;
+}
+
+.cart-image{
+	display: inline-block;
+	width: 15%;
+}
+
+.empty-cart-message{
+	display: inline-block;
+	width: 40%;
 }
 
 
