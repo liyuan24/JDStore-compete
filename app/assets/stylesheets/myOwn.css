@@ -11,6 +11,7 @@ footer{
 	text-align: center;
 	position: relative;
 	bottom: 0;
+	margin-top: 40px;
 }
 
 nav{
@@ -84,12 +85,14 @@ nav{
 
 .mySlide{
 	display: none;
+	width: 100%;
 }
 
 .slideshow-container{
-	max-width: 1000px;
+	/*max-width: 1000px;*/
 	position: relative;
 	margin: 0;
+	width: 100%;
 }
 
 /* Number text */
@@ -555,5 +558,43 @@ div.zoom .show-image{
 }   
 
 div.zoom img:hover { opacity: 0; }
+
+.land-category-row{
+	display: block;
+	width: 100%;
+}
+
+.land-category-column{
+	display: inline-block;
+	width: 23%;
+	margin: auto;
+	height: 490px;
+	margin-right: 10px;
+	background: linear-gradient(0deg, #3a8e89, #135652);
+}
+
+.land-log-in-column{
+	position: relative;
+	top: -55px;
+	height: 498px;
+	background: linear-gradient(0deg, #b6bdc6, #757a82);
+}
+
+.land-category-image{
+	width: 100%;
+	height: auto;
+	z-index: -1;
+}
+
+.land-sign-in-button{
+	padding: 50px;
+	margin: auto;
+	width: 90%;
+}
+
+.land-category-caption{
+	text-align: center;
+	color: #49ccc3;
+}
 
 

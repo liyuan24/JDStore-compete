@@ -1,6 +1,25 @@
-<div class="container">
+<div class="container-fluid" style="margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0;">
 	<%= render "common/slideImage" %>
 	<div class="col-md-12"> 
 		<%= render :partial => "product_item", :collection => @products, :as => :product %>
 	</div>
 </div>
+<script type="text/javascript">
+	var slideIndex = 0;
+	showSlide();
+	function showSlide() {
+	    var i;
+	    var slides = document.getElementsByClassName("mySlide");
+	    var dots = document.getElementsByClassName("dot");
+	    var len = slides.length;
+	    for (i = 0; i < slides.length; i++) {
+	       slides[i].style.display = "none"; 
+	       dots[i].className = dots[i].className.replace(" active-slide", ""); 
+	    }
+	    slideIndex++;
+	    if (slideIndex> len) {slideIndex = 1;}    
+	    slides[slideIndex-1].style.display = "block";  
+	    dots[slideIndex-1].className += " active-slide";
+	    setTimeout(showSlide, 2000); // Change image every 2 seconds
+	}
+</script>
