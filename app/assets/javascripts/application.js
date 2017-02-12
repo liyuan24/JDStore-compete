@@ -12,6 +12,7 @@
 //
 
 //= require bootstrap-sprockets
+//= require bootstrap/dropdown
 //= require jquery
 //= require jquery_ujs
 // = require turbolinks
