@@ -3,7 +3,10 @@ class ProductsController < ApplicationController
 	before_action :validate_query_string, only: [:search]
 
 	def index
-		@products = Product.all
+		@books = Product.where(:category => "book")
+		@dresses = Product.where(:category => "dress")
+		@cars = Product.where(:category => "car")
+		@wines = Product.where(:category => "wine")
 	end
 
 	def show

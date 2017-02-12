@@ -1,7 +1,33 @@
 <div class="container-fluid" style="margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0;">
 	<%= render "common/slideImage" %>
-	<div class="col-md-12"> 
-		<%= render :partial => "product_item", :collection => @products, :as => :product %>
+	<div class="product-category-container"> 
+		<div class="product-category">
+			<h3 class="product-category-title"><%= link_to("#", class:"product-category-title-link") do %>好书城<% end %></h3>
+			<div class="product-category-show">
+				<%= render :partial => "product-category-image-book", :collection => @books, :as => :book %>
+			</div>
+		</div>
+
+		<div class="product-category">
+			<h3 class="product-category-title"><%= link_to("#", class:"product-category-title-link") do %>服装馆<% end %></h3>
+			<div class="product-category-show">
+				<%= render :partial => "product-category-image-dress", :collection => @dresses, :as => :dress %>
+			</div>
+		</div>
+
+		<div class="product-category">
+			<h3 class="product-category-title"><%= link_to("#", class:"product-category-title-link") do %>酷车场<% end %></h3>
+			<div class="product-category-show">
+				<%= render :partial => "product_category_image_car", :collection => @cars, :as => :car %>
+			</div>
+		</div>
+
+		<div class="product-category">
+			<h3 class="product-category-title"><%= link_to("#", class:"product-category-title-link") do %>美酒庄<% end %></h3>
+			<div class="product-category-show">
+				<%= render :partial => "product-category-image-wine", :collection => @wines, :as => :wine %>
+			</div>
+		</div>
 	</div>
 </div>
 <script type="text/javascript">

@@ -61,7 +61,7 @@ nav{
 
 .product-item{
 	display: inline-block;
-	width: 30%;
+	width: 23%;
 	margin: 5px;
 	padding: 5px;
 }
@@ -595,6 +595,43 @@ div.zoom img:hover { opacity: 0; }
 .land-category-caption{
 	text-align: center;
 	color: #49ccc3;
+}
+
+.product-category-container{
+	width: 70%;
+	margin: auto;
+}
+
+.product-category{
+	width: 100%;
+}
+
+.product-category-title{
+	text-align: center;
+}
+
+.product-category-show{
+	margin: 0;
+}
+
+.product-price{
+	color: red;
+	font-size: 25px;
+}
+
+.product-category-image-item{
+	width: 23%;
+	display: inline-block;
+	margin: 5px;
+}
+
+.product-category-title-link{
+	color: black;
+}
+
+.product-category-title-link:hover{
+	text-decoration: none;
+	color: red;
 }
 
 
