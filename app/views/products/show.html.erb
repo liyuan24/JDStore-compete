@@ -1,17 +1,21 @@
-<div>
-	<p><%=  @product.title %></p>
-	<img id="zoom_01" src='<%= @product.image.medium.url %>' data-zoom-image="<%= @product.image.url %>"/>
-	<p>价格: ￥<%= @product.price %></p>
-	<p>描述: <%= @product.description %></p>
-	<p>库存: <%= @product.storage %></p>
+<div class="product-show-container">
+	<div class="product-show-image">
+		<img id="zoom_01" src='<%= @product.image.medium.url %>' data-zoom-image="<%= @product.image.url %>"/>
+	</div>
+	<div class="product-show-text">
+		<div class="product-show-title"><%=  @product.title %></div>
+		<div><%= @product.description %></div>
+		<div class="product-show-price">价格: ￥<%= @product.price %></div>
+		<div style="margin-top: 30px;">
+			<% if @product.storage > 0 %>
+				<%= link_to("加入购物车", add_to_cart_product_path(@product), class: "btn btn-danger", method: :post) %>
+			<% else %>
+				已经售空，无法购买
+			<% end %>
+		</div>
+	</div>
 </div>
-<div>
-	<% if @product.storage > 0 %>
-		<%= link_to("加入购物车", add_to_cart_product_path(@product), class: "btn btn-danger", method: :post) %>
-	<% else %>
-		已经售空，无法购买
-	<% end %>
-</div>
+
 
 <div class="container-fluid comment-container">
 	<div class="review-header">商品评价</div>

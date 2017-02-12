@@ -1,0 +1,8 @@
+<div class="category-page-container">
+	<div class="category-page-top">
+		<%= image_tag("dress-back.jpg", class: "width: 100%; height: auto;") %>
+	</div>
+	<div class="category-page-show">
+		<%= render :partial => "dress_item", :collection => @dresses, :as => :dress %>
+	</div>
+</div>

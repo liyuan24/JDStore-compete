@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
 	end
 
 	def search
-		@products = Product.ransack({:title_cont => @q}).result(:distinct => true)
+		@products = Product.ransack({:title_category_cont => @q}).result(:distinct => true)
 	end
 
 	def favor

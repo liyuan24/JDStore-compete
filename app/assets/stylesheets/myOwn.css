@@ -273,7 +273,6 @@ img.raty-cancel {
 	width: 28%;
 	display: block;
 	float: left;
-	font-weight: bold;
 	margin: 0;
 	padding: 15px;
 	margin-top: 15px;
@@ -575,7 +574,7 @@ div.zoom img:hover { opacity: 0; }
 
 .land-log-in-column{
 	position: relative;
-	top: -55px;
+	top: 78px;
 	height: 498px;
 	background: linear-gradient(0deg, #b6bdc6, #757a82);
 }
@@ -634,4 +633,47 @@ div.zoom img:hover { opacity: 0; }
 	color: red;
 }
 
+.category-page-container{
+	width: 100%;
+}
+
+.category-page-top{
+	width: 90%;
+	margin: auto;
+}
+
+.product-show-container{
+	width: 70%;
+	margin: auto;
+}
+.product-show-image{
+	display: inline-block;
+	width: 40%;
+	position: relative;
+	top: -80px;
+}
+
+.product-show-text{
+	width: 20%;
+	display: inline-block;
+	margin: left;
+	padding: 10px;
+	height: 207px;
+}
+
+.product-show-title{
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.product-show-price{
+	color: red;
+	font-size: 15px;
+	margin-top: 70px
+}
+
+.sign-in-container{
+	width: 40%;
+	margin: auto;
+}
 

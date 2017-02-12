@@ -1,0 +1,8 @@
+<div class="category-page-container">
+	<div class="category-page-top">
+		<%= image_tag("car-back.jpg", class: "width: 100%; height: auto;") %>
+	</div>
+	<div class="category-page-show">
+		<%= render :partial => "car_item", :collection => @cars, :as => :car %>
+	</div>
+</div>

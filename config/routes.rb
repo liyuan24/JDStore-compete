@@ -42,4 +42,9 @@ Rails.application.routes.draw do
   namespace :account do
   	resources :orders
   end
+
+  resources :books
+  resources :cars
+  resources :dresses
+  resources :wines
 end

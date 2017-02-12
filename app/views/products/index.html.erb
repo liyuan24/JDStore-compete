@@ -2,28 +2,28 @@
 	<%= render "common/slideImage" %>
 	<div class="product-category-container"> 
 		<div class="product-category">
-			<h3 class="product-category-title"><%= link_to("#", class:"product-category-title-link") do %>好书城<% end %></h3>
+			<h3 class="product-category-title"><%= link_to(books_path, class:"product-category-title-link") do %>好书城<% end %></h3>
 			<div class="product-category-show">
 				<%= render :partial => "product-category-image-book", :collection => @books, :as => :book %>
 			</div>
 		</div>
 
 		<div class="product-category">
-			<h3 class="product-category-title"><%= link_to("#", class:"product-category-title-link") do %>服装馆<% end %></h3>
+			<h3 class="product-category-title"><%= link_to(dresses_path, class:"product-category-title-link") do %>服装馆<% end %></h3>
 			<div class="product-category-show">
 				<%= render :partial => "product-category-image-dress", :collection => @dresses, :as => :dress %>
 			</div>
 		</div>
 
 		<div class="product-category">
-			<h3 class="product-category-title"><%= link_to("#", class:"product-category-title-link") do %>酷车场<% end %></h3>
+			<h3 class="product-category-title"><%= link_to(cars_path, class:"product-category-title-link") do %>酷车场<% end %></h3>
 			<div class="product-category-show">
 				<%= render :partial => "product_category_image_car", :collection => @cars, :as => :car %>
 			</div>
 		</div>
 
 		<div class="product-category">
-			<h3 class="product-category-title"><%= link_to("#", class:"product-category-title-link") do %>美酒庄<% end %></h3>
+			<h3 class="product-category-title"><%= link_to(wines_path, class:"product-category-title-link") do %>美酒庄<% end %></h3>
 			<div class="product-category-show">
 				<%= render :partial => "product-category-image-wine", :collection => @wines, :as => :wine %>
 			</div>

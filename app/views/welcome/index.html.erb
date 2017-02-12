@@ -8,6 +8,10 @@
 				<div class="land-sign-in-button">
 					<%= link_to("登录", new_user_session_path, class: "btn btn-success btn-block") %>
 				</div>
+
+				<div class="land-sign-in-button">
+					<%= link_to("去选购~", products_path, class: "btn btn-danger btn-block") %>
+				</div>
 			</div>
 		</div>
 		
@@ -15,7 +19,7 @@
 		<div class="land-category-column">
 			<h3 class="land-category-caption">服装舍</h3>
 			<div class="land-category-image">
-				<%= link_to("#") do %>
+				<%= link_to(dresses_path) do %>
 					<%= image_tag("dress-1.jpg", style: "width: 100%;") %>
 				<% end %>
 			</div>
@@ -24,7 +28,7 @@
 		<div class="land-category-column">
 			<h3 class="land-category-caption">酷车场</h3>
 			<div class="land-category-image">
-				<%= link_to("#") do %>
+				<%= link_to(cars_path) do %>
 					<%= image_tag("car-1.jpg", style: "width: 100%;") %>
 				<% end %>
 			</div>
@@ -33,7 +37,7 @@
 		<div class="land-category-column">
 			<h3 class="land-category-caption">红酒馆</h3>
 			<div class="land-category-image">
-				<%= link_to("#") do %>
+				<%= link_to(wines_path) do %>
 					<%= image_tag("wine.jpg", style: "width: 100%;") %>
 				<% end %>
 			</div>
