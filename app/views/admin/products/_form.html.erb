@@ -1,10 +1,10 @@
-<%= simple_form_for [:admin, @product] do |f| %>
+<%= simple_form_for [:admin, @product], html: { multipart: true } do |f| %>
 	<div class="form-inputs">
-		<%= f.input :title, required: false, input_html: { class: "form-control" } %>
-		<%= f.input :description, required: false, input_html: { class: "form-control" } %>
-		<%= f.input :price, required: false, input_html: { class: "form-control" } %>
-		<%= f.input :storage, required: false, input_html: { class: "form-control" } %>
-		<%= f.input :image, required: false, as: :file %>
+		<%= f.text_field :title,  html: { class: "form-control" } %>
+		<%= f.text_field :description,  html: { class: "form-control" } %>
+		<%= f.number_field :price,  html: { class: "form-control" } %>
+		<%= f.number_field :storage,  html: { class: "form-control" } %>
+		<%= f.file_field :pictures,  multiple: true, accept: "image/jpeg, image/jpg, image/gif, image/png" %>
 	</div>
 	<div class="form-actions">
 		<%= f.submit "提交", class: "btn btn-success", :disable_with => "Submitting..." %>
