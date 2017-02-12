@@ -11,11 +11,11 @@
 // about supported directives.
 //
 
-//= require bootstrap-sprockets
+//= require bootstrap/alert
 //= require bootstrap/dropdown
 //= require jquery
 //= require jquery_ujs
-// = require turbolinks
+//= require turbolinks
 //= require jquery.elevatezoom
 //= require ratyrate
 //= require jquery.raty
