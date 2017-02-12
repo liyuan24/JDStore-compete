@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.elevatezoom
 //= require ratyrate
 //= require jquery.raty
 //= require jquery_ujs
@@ -18,4 +19,5 @@
 //= require bootstrap-sprockets
 //= require slideImage
 //= cart_change
+//= zoom
 //= require_tree .

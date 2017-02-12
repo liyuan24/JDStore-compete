@@ -43,6 +43,8 @@ gem "carrierwave"
 gem "ransack"
 gem 'ratyrate'
 gem 'jquery-turbolinks'
+gem 'jquery-zoom-rails', '~> 0.0.3'
+gem 'elevatezoom-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
