@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   post '/rate' => 'rater#create', :as => 'rate'
   devise_for :users, :controllers => { registrations: "registrations" }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root "products#index"
+  root "welcome#index"
   resources :products do
     resources :reviews
   	collection do
