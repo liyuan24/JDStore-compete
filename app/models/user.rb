@@ -19,5 +19,7 @@ class User < ApplicationRecord
   def favorites_include?(product)
     favorites.include?(product)
   end
+
+  ratyrate_rater
   
 end
