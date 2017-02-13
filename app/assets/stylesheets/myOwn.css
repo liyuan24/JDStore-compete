@@ -200,7 +200,139 @@ nav{
 	background-color: rgb(35, 47, 62);
 }
 
+/* review#new page */
+.review-container{
+	background-color: white;
+	height: 70%;
+	margin-top: 30px;
+}
 
+.delivery-review{
+	width: 70%;
+	margin: auto;
+	background-color: white;
+	height: 100%;
+}
+
+.delivery-review-title{
+	width: 28%;
+	display: block;
+	float: left;
+	font-weight: bold;
+	margin: 0;
+	padding: 15px;
+	margin-top: 15px;
+}
+
+.delivery-review-content{
+	margin: 0;
+	width: 72%;
+	display: block;
+	float: left;
+	border-left: 1px solid #F5F5F5;
+	padding: 20px;
+}
+
+.delivery-review-item{
+	float: left;
+	margin: auto;
+	width: 30%;
+}
+
+.delivery-review-item:first-child{
+	margin-left: 20px;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+.quality-review{
+	margin-top: 30px;
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+	height: 100%;
+	clear: left;
+}
+
+.quality-review-title{
+	width: 28%;
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 15px;
+	margin-top: 15px;
+	text-align: center;
+	border-right: 1px solid #F5F5F5;
+}
+
+.quality-review-content{
+	margin: 0;
+	width: 72%;
+	display: block;
+	float: left;
+	border-left: 1px solid #F5F5F5;
+	padding: 20px;
+}
+
+.quality-review-stars{
+	padding-left: 20px;
+}
+
+.quality-review-text{
+	
+}
+
+.quality-review-text-input{
+	width: 70%;
+}
+
+.text-review{
+	margin-top: 30px;
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+	height: 100%;
+	clear: left;
+}
+
+.text-review-title{
+	width: 28%;
+	display: block;
+	float: left;
+	font-weight: bold;
+	padding: 15px;
+}
+
+.text-review-input{
+	width: 72%;
+	display: block;
+	float: left;
+	padding: 15px;
+	border-left: 1px solid #F5F5F5;
+}
+
+.text-review-submit-container{
+	width: 20%;
+	margin: auto;
+}
+
+.text-review-submit{
+	display: block;
+	background-color: white;
+	padding: 20px;
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+/*  */
 
 
 

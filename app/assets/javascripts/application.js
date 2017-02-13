@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require slideImage
+//= require ratyrate
 //= require_tree .
