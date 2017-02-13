@@ -11,7 +11,7 @@
 					<%= product_list.product_name %>
 				</div>
 				<div class="order-list-quantity"><%= product_list.quantity %></div>
-				<div class="order-list-total">总额: <%= product_list.quantity * product_list.product_price %></div>
+				<div class="order-list-total">总额: ￥<%= product_list.quantity * product_list.product_price %></div>
 				<div class="order-list-review"><%= link_to("评价", "#" , class: "btn btn-danger") %></div>
 			</div>
 		<% end %>
