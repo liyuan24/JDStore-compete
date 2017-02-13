@@ -9,11 +9,12 @@ class ProductsController < ApplicationController
 
 	def show
 		@product = Product.find(params[:id])
+		@reviews_all = @product.reviews
 		@reviews = cate_reviews
-		if @reviews.count > 0
-			@good_percent = @reviews.good.count / @reviews.count
-			@fair_percent = @reviews.fair.count / @reviews.count
-			@bad_percent = @reviews.bad.count / @reviews.count
+		if @reviews_all.count > 0
+			@good_percent = @reviews_all.good.count.to_f / @reviews_all.count
+			@fair_percent = @reviews_all.fair.count.to_f / @reviews_all.count
+			@bad_percent = @reviews_all.bad.count.to_f / @reviews_all.count
 		else
 			@good_percent = 1
 			@fair_percent = 0
