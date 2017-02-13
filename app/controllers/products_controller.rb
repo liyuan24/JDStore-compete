@@ -4,7 +4,10 @@ class ProductsController < ApplicationController
 
 
 	def index
-		@products = Product.all
+		@books = Product.where(:category => "book")
+		@dresses = Product.where(:category => "dress")
+		@cars = Product.where(:category => "car")
+		@wines = Product.where(:category => "wine")
 	end
 
 	def show
