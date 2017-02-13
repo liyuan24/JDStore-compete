@@ -13,4 +13,14 @@ class CartsController < ApplicationController
 		@cart_items = current_cart.cart_items
 		@order = Order.new
 	end
+
+	def select_all
+		current_cart.select_all!
+		redirect_to carts_path
+	end
+
+	def remove_all
+		current_cart.remove_all!
+		redirect_to carts_path
+	end
 end

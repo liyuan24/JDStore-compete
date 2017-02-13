@@ -15,7 +15,11 @@
 					<% end %>
 				</span>
 			<% else %>
-				
+				<span>
+					<%= link_to(favor_product_path(product),  method: :post, class: "favor-button-empty") do %>
+						<span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+					<% end %>
+				</span>
 			<% end %>
 		<% else %>
 			<span>

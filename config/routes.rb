@@ -19,10 +19,20 @@ Rails.application.routes.draw do
   	collection do
   		delete :clean
   		post :checkout
+      post :select_all
+      post :remove_all
   	end
   end
 
-  resources :cart_items
+  resources :cart_items do
+    member do
+      post :buy_now
+      post :not_buy_now
+      post :plus_quantity
+      post :minus_quantity
+    end
+  end
+  
   resources :orders
 
   namespace :admin do

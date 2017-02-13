@@ -6,6 +6,7 @@ class Cart < ApplicationRecord
 		ci = cart_items.build
 		ci.product = product
 		ci.quantity = 1
+		ci.buy_now = true
 		ci.save
 	end
 
@@ -17,6 +18,24 @@ class Cart < ApplicationRecord
 			end
 		end
 		return sum
+	end
+
+	def select_all!
+		cart_items.each do |cart_item|
+			cart_item.buy_now = true
+			cart_item.save
+		end
+		self.select_all = true
+		self.save
+	end
+
+	def remove_all!
+		cart_items.each do |cart_item|
+			cart_item.buy_now = false
+			cart_item.save
+		end
+		self.select_all = false
+		self.save
 	end
 
 	def clean!

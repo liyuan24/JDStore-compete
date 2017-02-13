@@ -29,13 +29,13 @@ class ProductsController < ApplicationController
 	def favor
 		@product = Product.find(params[:id])
 		current_user.favor!(@product)
-		redirect_to products_path
+		redirect_to :back
 	end
 
 	def unfavor
 		@product = Product.find(params[:id])
 		current_user.unfavor!(@product)
-		redirect_to products_path
+		redirect_to :back
 	end
 
 	def add_to_cart
