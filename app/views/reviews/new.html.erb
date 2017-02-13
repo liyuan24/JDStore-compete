@@ -11,7 +11,7 @@
 		</div>
 		<div class="quality-review clearfix">
 			<div class="quality-review-title">
-				<%= link_to(image_tag(@product.image.medium.url), product_path(@product)) %><br>
+				<%= link_to(image_tag(@product.image.thumb.url), product_path(@product)) %><br>
 				<%= link_to(@product.title, product_path(@product)) %><br>
 				￥<%= @product.price %>
 			</div>

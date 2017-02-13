@@ -9,6 +9,16 @@ class ProductsController < ApplicationController
 
 	def show
 		@product = Product.find(params[:id])
+		@reviews = cate_reviews
+		if @reviews.count > 0
+			@good_percent = @reviews.good.count / @reviews.count
+			@fair_percent = @reviews.fair.count / @reviews.count
+			@bad_percent = @reviews.bad.count / @reviews.count
+		else
+			@good_percent = 1
+			@fair_percent = 0
+			@bad_percent = 0
+		end
 	end
 
 	def search
@@ -44,4 +54,17 @@ class ProductsController < ApplicationController
 	def validate_query_string
 		@q = params[:query_string].gsub(/\|\'|\/|\?/, "") if params[:query_string].present?
 	end	
+
+	def cate_reviews	
+		case params[:review_cate]
+		when "good"
+			@product.reviews.good
+		when "fair"
+			@product.reviews.fair
+		when "bad"
+			@product.reviews.bad
+		else
+			@product.reviews
+		end
+	end
 end
