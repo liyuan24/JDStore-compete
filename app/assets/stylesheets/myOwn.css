@@ -651,7 +651,7 @@ div.zoom img:hover { opacity: 0; }
 	display: inline-block;
 	width: 40%;
 	position: relative;
-	top: -80px;
+	top: 0px;
 }
 
 .product-show-text{
