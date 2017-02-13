@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :orders
 
+  ratyrate_rater
+
   def favor!(product)
   	favorites.push(product)
   end
@@ -20,6 +22,5 @@ class User < ApplicationRecord
     favorites.include?(product)
   end
 
-  ratyrate_rater
   
 end
