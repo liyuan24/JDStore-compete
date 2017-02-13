@@ -1,78 +1,4 @@
-<div class="product-show-container">
-	<div class="product-show-image">
-		<img id="zoom_01" src='<%= @product.image.medium.url %>' data-zoom-image="<%= @product.image.url %>"/>
-	</div>
-	<div class="product-show-text">
-		<div class="product-show-title"><%=  @product.title %></div>
-		<div><%= @product.description %></div>
-		<div class="product-show-price">价格: ￥<%= @product.price %></div>
-		<div style="margin-top: 30px;">
-			<% if @product.storage > 0 %>
-				<%= link_to("加入购物车", add_to_cart_product_path(@product), class: "btn btn-danger", method: :post) %>
-			<% else %>
-				已经售空，无法购买
-			<% end %>
-		</div>
-	</div>
-</div>
-
-
-<div class="container-fluid comment-container">
-	<div class="review-header">商品评价</div>
-	<div class="review-percent">
-		<div class="good-percent-big">
-			<div class="good-percent-number">
-				<%= @good_percent * 100 %>%
-			</div><br>
-			好评率
-		</div>
-		<div class="percent-bar">
-			<div class="bar-container">
-				<div class="bar-text">好评(<%= @good_percent * 100 %>%)</div>
-				<div class="bar-border">
-					<div class="bar-content" style="width: <%= @good_percent * 100 %>%; height: 100%;"></div>
-				</div>
-			</div><br>
-			<div class="bar-container">
-				<div class="bar-text">中评(<%= @fair_percent * 100 %>%)</div>
-				<div class="bar-border">
-					<div class="bar-content" style="width: <%= @fair_percent * 100 %>%;"></div>
-				</div>
-			</div><br>
-			<div class="bar-container">
-				<div class="bar-text">差评(<%= @bad_percent * 100 %>%)</div>
-				<div class="bar-border">
-					<div class="bar-content" style="width: <%= @bad_percent * 100 %>%;"></div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="review-select">
-		<ul class="review-bar">
-			<li class="review-item"><%= link_to(product_path(@product), class: "review-category") do %>全部评价(<%= @product.reviews.count %>)<% end %></li>
-			<li class="review-item">
-				<%= link_to(product_path(@product, :review_cate => "good"), class: "review-category" ) do %>好评(<%= @product.reviews.good.count %>)<% end %>
-			</li>
-			<li class="review-item">
-				<%= link_to(product_path(@product, :review_cate => "fair"), class: "review-category") do %>中评(<%= @product.reviews.fair.count %>)<% end %>
-			</li>
-			<li class="review-item">
-				<%= link_to(product_path(@product, :review_cate => "bad"), class: "review-category") do %>差评(<%= @product.reviews.bad.count %>)<% end %>
-			</li>
-		</ul>
-	</div>
-	<div class="review-container">
-		<%= render :partial => "review_item", :collection => @reviews, :as => :review %>
-	</div>
-</div>
-
-
-<script>
-    $('#zoom_01').elevateZoom();
-</script>
-
-<script type="text/javascript">
-	/*
+/*
  *	jQuery elevateZoom 3.0.8
  *	Demo's and documentation:
  *	www.elevateweb.co.uk/image-zoom
@@ -1856,4 +1782,3 @@ if ( typeof Object.create !== 'function' ) {
 	};
 
 })( jQuery, window, document );
-</script>
