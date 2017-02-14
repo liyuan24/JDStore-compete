@@ -711,3 +711,16 @@ div.zoom img:hover { opacity: 0; }
 	padding-bottom: 30px;
 }
 
+.shopping-button-container{
+	display: block;
+	width: 100%;
+	padding: 20px;
+	background-color: #fff6e4;
+}
+
+.shopping-button{
+	width: 20%;
+	min-width: 100px;
+	margin: auto;
+}
+
