@@ -1,17 +1,13 @@
-<div class="container-fluid" style="margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0;">
+<div class="container-fluid welcome-container" style="margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0;">
 	<%= render "common/slideImage" %>
-	<div class="land-category-row">
-		<div class="land-category-column land-log-in-column" style="margin-left: 30px;">
-			<div style="margin-top: 80px; width: 100%;">
-				<h2 style="text-align: center; margin-top: 20px;">欢迎！</h2>
-				<p style="text-align: center;">登录获得无与伦比的购物体验</p>
-				<div class="land-sign-in-button">
-					<%= link_to("登录", new_user_session_path, class: "btn btn-success btn-block") %>
-				</div>
+	<div class="land-category-row clearfix">
 
-				<div class="land-sign-in-button">
-					<%= link_to("去选购~", products_path, class: "btn btn-danger btn-block") %>
-				</div>
+		<div class="land-category-column">
+			<h3 class="land-category-caption">阅读馆</h3>
+			<div class="land-category-image">
+				<%= link_to(books_path) do %>
+					<%= image_tag("book-2.jpg", style: "width: 100%;") %>
+				<% end %>
 			</div>
 		</div>
 		
@@ -20,7 +16,7 @@
 			<h3 class="land-category-caption">服装舍</h3>
 			<div class="land-category-image">
 				<%= link_to(dresses_path) do %>
-					<%= image_tag("dress-1.jpg", style: "width: 100%;") %>
+					<%= image_tag("dress-2.jpg", style: "width: 100%;") %>
 				<% end %>
 			</div>
 		</div>
@@ -29,7 +25,7 @@
 			<h3 class="land-category-caption">酷车场</h3>
 			<div class="land-category-image">
 				<%= link_to(cars_path) do %>
-					<%= image_tag("car-1.jpg", style: "width: 100%;") %>
+					<%= image_tag("car-2.jpg", style: "width: 100%;") %>
 				<% end %>
 			</div>
 		</div>
@@ -38,7 +34,7 @@
 			<h3 class="land-category-caption">红酒庄</h3>
 			<div class="land-category-image">
 				<%= link_to(wines_path) do %>
-					<%= image_tag("wine.jpg", style: "width: 100%;") %>
+					<%= image_tag("wine-2.jpg", style: "width: 100%;") %>
 				<% end %>
 			</div>
 		</div>

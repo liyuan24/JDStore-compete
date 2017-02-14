@@ -1,30 +1,30 @@
 <div class="container-fluid" style="margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0;">
 	<%= render "common/slideImage" %>
 	<div class="product-category-container"> 
-		<div class="product-category">
+		<div class="product-category category-1 clearfix">
 			<h3 class="product-category-title"><%= link_to(books_path, class:"product-category-title-link") do %>好书城<% end %></h3>
-			<div class="product-category-show">
+			<div class="product-category-show clearfix">
 				<%= render :partial => "product-category-image-book", :collection => @books, :as => :book %>
 			</div>
 		</div>
 
-		<div class="product-category">
+		<div class="product-category category-2 clearfix">
 			<h3 class="product-category-title"><%= link_to(dresses_path, class:"product-category-title-link") do %>服装馆<% end %></h3>
-			<div class="product-category-show">
+			<div class="product-category-show clearfix">
 				<%= render :partial => "product-category-image-dress", :collection => @dresses, :as => :dress %>
 			</div>
 		</div>
 
-		<div class="product-category">
+		<div class="product-category category-1 clearfix">
 			<h3 class="product-category-title"><%= link_to(cars_path, class:"product-category-title-link") do %>酷车场<% end %></h3>
-			<div class="product-category-show">
+			<div class="product-category-show clearfix">
 				<%= render :partial => "product-category-image-car", :collection => @cars, :as => :car %>
 			</div>
 		</div>
 
-		<div class="product-category">
+		<div class="product-category category-2 clearfix">
 			<h3 class="product-category-title"><%= link_to(wines_path, class:"product-category-title-link") do %>红酒庄<% end %></h3>
-			<div class="product-category-show">
+			<div class="product-category-show clearfix">
 				<%= render :partial => "product-category-image-wine", :collection => @wines, :as => :wine %>
 			</div>
 		</div>
