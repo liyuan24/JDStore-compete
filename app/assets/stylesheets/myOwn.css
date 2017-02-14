@@ -4,15 +4,13 @@
 
 html, body{
 	height: 100%;
-	
-	z-index: 1000;
 }
 
 footer{
 	width: 100%;
 	text-align: center;
-	position: relative;
-	bottom: 0;
+	/*position: relative;
+	bottom: 0;*/
 	padding-top: 40px;
 	background-color: #8b9da9;
 }
@@ -663,6 +661,10 @@ div.zoom img:hover { opacity: 0; }
 }
 
 .category-page-container{
+	width: 100%;
+}
+
+.category-page-show{
 	width: 100%;
 }
 
