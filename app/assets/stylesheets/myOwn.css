@@ -440,8 +440,9 @@ li.review-item{
 }
 
 .good-percent-big{
-	width: 30%;
-	display: inline-block;
+	max-width: 300px;
+	display: block;
+	float: left;
 	padding-bottom: 10px;
 }
 
@@ -451,16 +452,19 @@ li.review-item{
 }
 
 .percent-bar{
-	width: 65%;
-	display: inline-block;
+	max-width: 300px;
+	display: block;
+	float: left;
+	margin-left: 90px;
 }
 
 .bar-container{
-	width: 80%;
+	min-width: 270px;
+	display: block;
 }
 
 .bar-text{
-	width: 20%;
+	min-width: 100px;
 	display: inline-block;
 }
 
@@ -468,7 +472,7 @@ li.review-item{
 	display: inline-block;
 	background-color: #FAFAFA;
 	height: 15px;
-	width: 30%;
+	min-width: 150px;
 	padding: 0;
 }
 
@@ -678,16 +682,18 @@ div.zoom img:hover { opacity: 0; }
 	margin: auto;
 }
 .product-show-image{
-	display: inline-block;
-	width: 40%;
-	position: relative;
-	top: 0px;
+	display: block;
+	float: left;
+	max-width: 400px;
+	min-width: 200px;
+	/*position: relative;
+	top: 0px;*/
 }
 
 .product-show-text{
-	width: 20%;
-	display: inline-block;
-	margin: left;
+	max-width: 300px;
+	display: block;
+	float: left;
 	padding: 10px;
 	height: 207px;
 }

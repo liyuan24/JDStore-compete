@@ -1,4 +1,4 @@
-<div class="product-show-container">
+<div class="product-show-container clearfix">
 	<div class="product-show-image">
 		<img id="zoom_01" src='/assets/<%= @product.image_medium_path %>' data-zoom-image="/assets/<%= @product.image_path %>"/>
 	</div>
@@ -19,7 +19,7 @@
 
 <div class="container-fluid comment-container">
 	<div class="review-header">商品评价</div>
-	<div class="review-percent">
+	<div class="review-percent clearfix">
 		<div class="good-percent-big">
 			<div class="good-percent-number">
 				<%= @good_percent * 100 %>%
