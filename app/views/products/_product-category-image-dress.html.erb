@@ -1,8 +1,6 @@
 <div class="product-item">
 	<div class="product-category-image-item-show">
-		<% unless dress.image.blank? %>
-			<%= link_to(product_path(dress)) do %><%= image_tag(dress.image.medium.url, class: "product-image") %><% end %>
-		<% end %>
+	<%= link_to(product_path(dress)) do %><%= image_tag(dress.image_medium_path, class: "product-image") %><% end %>
 	</div>
 	<div>
 		<p class="product-price">￥<%= dress.price %></p>

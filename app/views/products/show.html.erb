@@ -1,6 +1,6 @@
 <div class="product-show-container">
 	<div class="product-show-image">
-		<img id="zoom_01" src='<%= @product.image.medium.url %>' data-zoom-image="<%= @product.image.url %>"/>
+		<img id="zoom_01" src='/assets/<%= @product.image_medium_path %>' data-zoom-image="/assets/<%= @product.image_path %>"/>
 	</div>
 	<div class="product-show-text">
 		<div class="product-show-title"><%=  @product.title %></div>
