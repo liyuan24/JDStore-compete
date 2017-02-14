@@ -12,7 +12,7 @@
 			<% end %>
 		</td>
 		<td style="width: 20%;" >
-			<%= link_to(product_path(cart_item.product)) do %><%= image_tag(cart_item.product.image.thumb.url) %><% end %>
+			<%= link_to(product_path(cart_item.product_id)) do %><%= image_tag(cart_item.product.image_thumb_path) %><% end %>
 		</td>
 		<td style="width: 25%;"><%= link_to(cart_item.product.title, product_path(cart_item.product)) %></td>
 		<td style="width: 8%;">￥<%= cart_item.product.price %></td>
@@ -43,7 +43,7 @@
 			<% end %>
 		</td>
 		<td style="width: 20%;" >
-			<%= link_to(product_path(cart_item.product)) do %><%= image_tag(cart_item.product.image.thumb.url) %><% end %>
+			<%= link_to(product_path(cart_item.product_id)) do %><%= image_tag(cart_item.product.image_thumb_path) %><% end %>
 		</td>
 		<td style="width: 25%;"><%= link_to(cart_item.product.title, product_path(cart_item.product)) %></td>
 		<td style="width: 8%;">￥<%= cart_item.product.price %></td>
