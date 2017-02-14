@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170213130949) do
+ActiveRecord::Schema.define(version: 20170214023439) do
 
   create_table "average_caches", force: :cascade do |t|
     t.integer  "rater_id"
@@ -67,14 +67,17 @@ ActiveRecord::Schema.define(version: 20170213130949) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.string   "title"
     t.text     "description"
     t.integer  "storage"
     t.decimal  "price"
     t.string   "image"
     t.string   "category"
+    t.string   "image_path"
+    t.string   "image_medium_path"
+    t.string   "image_thumb_path"
   end
 
   create_table "rates", force: :cascade do |t|

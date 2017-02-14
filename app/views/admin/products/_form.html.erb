@@ -6,6 +6,9 @@
 		<%= f.input :storage, required: false, input_html: { class: "form-control" } %>
 		<%= f.input :category, required: false, input_html: { class: "form-control" } %>
 		<%= f.input :image, required: false, as: :file %>
+		<%= f.input :image_path, required: false%>
+		<%= f.input :image_medium_path, required: false%>
+		<%= f.input :image_thumb_path, required: false%>
 	</div>
 	<div class="form-actions">
 		<%= f.submit "提交", class: "btn btn-success", :disable_with => "Submitting..." %>
