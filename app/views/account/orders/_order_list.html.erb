@@ -17,4 +17,12 @@
 			</div>
 		<% end %>
 	</div>
+	<div>
+		订单状态:
+		<% if order.is_paid %>
+			已付款
+		<% else %>
+			<%= link_to("去支付", order_path(order.token), class: "btn btn-danger") %>
+		<% end %>
+	</div>
 </div>
