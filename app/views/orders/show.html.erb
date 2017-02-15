@@ -27,9 +27,13 @@
 			<div class="panel-heading">收件人</div>
 			<div class="panel-body"><%= @order.receive_name %> - <%= @order.receive_address %></div>
 		</div>
-		<div class="group pull-right">
-			<%= link_to("使用支付宝支付", pay_with_alipay_order_path(@order.token), method: :post, class: "btn btn-danger")%>
-			<%= link_to("使用支付宝支付", pay_with_weixin_order_path(@order.token), method: :post, class: "btn btn-danger")%>
-		</div>
+		<% if @order.is_paid %>
+			<p class="text-center">此订单已完成支付</p>
+		<% else %>
+			<div class="group pull-right">
+				<%= link_to("使用支付宝支付", pay_with_alipay_order_path(@order.token), method: :post, class: "btn btn-danger")%>
+				<%= link_to("使用支付宝支付", pay_with_weixin_order_path(@order.token), method: :post, class: "btn btn-danger")%>
+			</div>
+		<% end %>
 	</div>
 </div>
