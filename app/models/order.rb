@@ -13,7 +13,7 @@ class Order < ApplicationRecord
 	end
 
 	def pay!
-		self.update_column(is_paid: true)
+		self.update_columns(is_paid: true)
 	end
 
 end
