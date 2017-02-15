@@ -8,6 +8,7 @@ class OrdersController < ApplicationController
 		if @order.save
 			create_product_list
 			clean_cart
+			OrderMailer.notify_order_placed(@order).deliver!
 			redirect_to order_path(@order.token)
 		else
 			render "carts/checkout"
