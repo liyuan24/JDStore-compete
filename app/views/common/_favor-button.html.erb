@@ -1,0 +1,7 @@
+<span>
+	<%= link_to(favor_product_path(product),  method: :post, class: "favor-button-full") do %><span class="glyphicon glyphicon-heart" aria-hidden="true"></span><% end %>
+</span>
+
+<span>
+	<%= link_to(unfavor_product_path(product), method: :post, class: "favor-button-empty") do %><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span><% end %>
+</span>

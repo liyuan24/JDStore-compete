@@ -1,0 +1,27 @@
+<div class="category-page-container">
+	<div class="category-page-top">
+		<%= render "slide" %>
+	</div>
+	<div class="category-page-show">
+		<%= render :partial => "car_item", :collection => @cars, :as => :car %>
+	</div>
+</div>
+<script type="text/javascript">
+	var slideIndex = 0;
+	showSlide();
+	function showSlide() {
+	    var i;
+	    var slides = document.getElementsByClassName("mySlide");
+	    var dots = document.getElementsByClassName("dot");
+	    var len = slides.length;
+	    for (i = 0; i < slides.length; i++) {
+	       slides[i].style.display = "none"; 
+	       dots[i].className = dots[i].className.replace(" active-slide", ""); 
+	    }
+	    slideIndex++;
+	    if (slideIndex> len) {slideIndex = 1;}    
+	    slides[slideIndex-1].style.display = "block";  
+	    dots[slideIndex-1].className += " active-slide";
+	    setTimeout(showSlide, 2000); // Change image every 2 seconds
+	}
+</script>

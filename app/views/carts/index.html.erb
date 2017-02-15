@@ -1,0 +1,50 @@
+<% if current_cart.cart_items.count != 0 %>
+	<div class="container-fluid">
+		<div class="col-md-12">
+			<h2 style="text-align: center;">购物车列表</h2>
+			<hr>
+			<%= link_to("清空购物车", clean_carts_path, method: :delete, data: { confirm: "确定要清空购物车吗？" }, 
+			class: "pull-right btn btn-danger", style: "margin-bottom: 10px;") %>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>
+							<% if current_cart.select_all %>
+								<%= link_to(remove_all_carts_path, method: :post) do %><input type="checkbox" name="a" value="b" checked><% end %>
+							<% else %>
+								<%= link_to(select_all_carts_path, method: :post) do %><input type="checkbox" name="a" value="b"><% end %>
+							<% end %>
+							全选
+						</th>
+						<th colspan="2">商品资讯</th>
+						<th>单价</th>
+						<th style="text-align: center">数量</th>
+						<th>小计</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<%= render :partial => "cart_item", :collection => @cart_items, :as => :cart_item %>
+				</tbody>
+			</table>
+			<br>
+			<div>
+				<span class="pull-right">总计 <%= render_total_price(current_cart) %> RMB</span>
+			</div>
+			<hr>
+			<div>
+				<%= link_to(checkout_carts_path, class:"btn btn-danger pull-right", method: :post) do %>
+					去付款(<%= current_cart.cart_items.where(:buy_now => true).count %>)
+				<% end %>
+			</div>
+		</div>
+	</div>
+<% else %>
+	<div class="empty-cart-container">
+		<div class="cart-image"><i class="fa fa-shopping-cart fa-5x" aria-hidden="true"></i></div>
+		<div class="empty-cart-message">
+			购物车空空的哦~，去看看心仪的商品吧~<br>
+			<%= link_to("去购物>", products_path) %>
+		</div>
+	</div>
+<% end %>

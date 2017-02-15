@@ -1,0 +1,32 @@
+<div class="product-item">
+	<div class="product-category-image-item-show">
+	<%= link_to(product_path(wine)) do %><%= image_tag(wine.image_medium_path, class: "product-image") %><% end %>
+	</div>
+	<div>
+		<p class="product-price">￥<%= wine.price %></p>
+		<p class="product-title"><%= wine.title %></p>
+		<p class="product-heart">
+			<% if current_user %>
+				<% if current_user.favorites.include?(wine) %>
+					<span>
+						<%= link_to(unfavor_product_path(wine),  method: :post, class: "favor-button-full") do %>
+							<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+						<% end %>
+					</span>
+				<% else %>
+					<span>
+						<%= link_to(favor_product_path(wine), method: :post, class: "favor-button-empty") do %>
+							<span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+						<% end %>
+					</span>
+				<% end %>
+			<% else %>
+				<span>
+					<%= link_to(favor_product_path(wine), method: :post, class: "favor-button-empty") do %>
+						<span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+					<% end %>
+				</span>
+			<% end %>
+		</p>
+	</div>
+</div>

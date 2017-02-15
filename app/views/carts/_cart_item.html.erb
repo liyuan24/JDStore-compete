@@ -1,0 +1,64 @@
+<% if !cart_item.buy_now %>
+	<tr id="cart-item-row">
+		<td style="width: 5%;">
+			<% if !cart_item.buy_now %>
+				<%= link_to(buy_now_cart_item_path(cart_item.product_id), method: :post) do %>
+					<input type="checkbox" name="vehicle" value="Car">
+				<% end %>
+			<% else %>
+				<%= link_to(not_buy_now_cart_item_path(cart_item.product_id), method: :post) do %>
+					<input type="checkbox" name="vehicle" value="Car" class="checkbox-buy-now" checked>
+				<% end %>
+			<% end %>
+		</td>
+		<td style="width: 20%;" >
+			<%= link_to(product_path(cart_item.product_id)) do %><%= image_tag(cart_item.product.image_thumb_path) %><% end %>
+		</td>
+		<td style="width: 25%;"><%= link_to(cart_item.product.title, product_path(cart_item.product)) %></td>
+		<td style="width: 8%;">￥<%= cart_item.product.price %></td>
+		<td>
+			<div class="change-quantity-container">
+				<div class="plus-one"><%= link_to("+", plus_quantity_cart_item_path(cart_item.product_id), class: "one-chara", method: :post) %></div>
+				<div class="cart_item_quantity"><%= cart_item.quantity %></div>
+				<div class="minus-one"><%= link_to("-", minus_quantity_cart_item_path(cart_item.product_id), class: "one-chara", method: :post) %></div>
+			</div>
+		</td>
+		<td><strong>￥<%= cart_item.product.price * cart_item.quantity %></strong></td>
+		<td>
+			<%= link_to(cart_item_path(cart_item.product_id), method: :delete, class: "cart-item-operation") do %>删除<% end %><br>
+			<%= link_to(favor_product_path(cart_item.product_id), method: :post, class: "cart-item-operation") do %>移到我的关注<% end %>
+		</td>
+	</tr>
+<% else %>
+	<tr style="background-color: #FFF4E8;" id="cart-item-row">
+		<td style="width: 5%;">
+			<% if !cart_item.buy_now %>
+				<%= link_to(buy_now_cart_item_path(cart_item.product_id), method: :post) do %>
+					<input type="checkbox" name="vehicle" value="Car">
+				<% end %>
+			<% else %>
+				<%= link_to(not_buy_now_cart_item_path(cart_item.product_id), method: :post) do %>
+					<input type="checkbox" name="vehicle" value="Car" class="checkbox-buy-now" checked>
+				<% end %>
+			<% end %>
+		</td>
+		<td style="width: 20%;" >
+			<%= link_to(product_path(cart_item.product_id)) do %><%= image_tag(cart_item.product.image_thumb_path) %><% end %>
+		</td>
+		<td style="width: 25%;"><%= link_to(cart_item.product.title, product_path(cart_item.product)) %></td>
+		<td style="width: 8%;">￥<%= cart_item.product.price %></td>
+		<td>
+			<div class="change-quantity-container">
+				<div class="plus-one"><%= link_to("+", plus_quantity_cart_item_path(cart_item.product_id), class: "one-chara", method: :post) %></div>
+				<div class="cart_item_quantity"><%= cart_item.quantity %></div>
+				<div class="minus-one"><%= link_to("-", minus_quantity_cart_item_path(cart_item.product_id), class: "one-chara", method: :post) %></div>
+			</div>
+		</td>
+		<td><strong>￥<%= cart_item.product.price * cart_item.quantity %></strong></td>
+		<td>
+			<%= link_to(cart_item_path(cart_item.product_id), method: :delete, class: "cart-item-operation") do %>删除<% end %><br>
+			<%= link_to(favor_product_path(cart_item.product_id), method: :post, class: "cart-item-operation") do %>移到我的关注<% end %>
+		</td>
+	</tr>
+<% end %>
+

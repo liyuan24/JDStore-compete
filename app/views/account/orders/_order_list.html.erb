@@ -1,0 +1,20 @@
+<div class="container-fluid">
+	<div class="col-md-8 col-md-offset-2">
+		<div class="order-list-header">
+			<span class="order-list-time"><%= order.created_at.to_s(:long) %></span>
+			<span class="order-list-receiver">收货人: <%= order.receive_name %></span>
+			<span class="order-number">订单号: <%= link_to(order.id, order_path(order.token)) %></span>
+		</div>
+		<% order.product_lists.each do |product_list| %>
+			<div class="order-list-item">
+				<div class="order-info">
+					<%= product_list.product_name %>
+				</div>
+				<%= product_list.product_id %>
+				<div class="order-list-quantity"><%= product_list.quantity %></div>
+				<div class="order-list-total">总额: ￥<%= product_list.quantity * product_list.product_price %></div>
+				<div class="order-list-review"><%= link_to("评价", new_product_review_path(product_list.product_id), class: "btn btn-danger") %></div>
+			</div>
+		<% end %>
+	</div>
+</div>

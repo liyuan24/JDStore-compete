@@ -1,0 +1,10 @@
+<div class="search-bar">
+	<%= form_tag(search_admin_products_path, method: :get) do %>
+		<div class="input-group" >
+			<input type="text" class="form-control" placeholder="search" name="query_string">
+			<div class="input-group-btn">
+				<button class="btn btn-danger" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+			</div>
+		</div>
+	<% end %>
+</div>

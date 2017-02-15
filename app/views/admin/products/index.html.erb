@@ -1,0 +1,24 @@
+<div class="container-fluid">
+	<div class="col-md-2 pull-right side-bar">
+		<ul class="nav nav-pills nav-stacked">
+			<li><%= link_to("新增商品", new_admin_product_path, class: "btn btn-primary") %></li>
+		</ul>
+	</div>
+	<div class="col-md-8 col-md-offset-2"> 
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<td>#</td>
+					<td>图片</td>
+					<td>名称</td>
+					<td>价格</td>
+					<td>库存</td>
+					<td>操作</td>
+				</tr>
+			</thead>
+			<tbody>
+				<%= render :partial => "product_table", :collection => @products, :as => :product %>
+			</tbody>
+		</table>
+	</div>
+</div>

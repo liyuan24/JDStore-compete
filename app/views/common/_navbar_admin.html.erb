@@ -1,0 +1,31 @@
+<nav class="navbar">
+	<div class="navbar-header">
+		<button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<%= link_to("JD", products_path, class: "navbar-brand", id: "navbar-title") %>
+	</div>
+	<div class="collapse navbar-collapse" id="navbar-1">
+		<%= render "common/search_bar_admin" %>
+		<ul class="nav navbar-nav pull-right" id="navbar-list">
+			<% if !current_user %>
+				<li><%= link_to( new_user_registration_path, id: "navbar-list-item-1") do %><i class="fa fa-user" aria-hidden="true"></i>注册<% end %></li>
+				<li><%= link_to( new_user_session_path, id: "navbar-list-item-2" ) do %><i class="fa fa-sign-in" aria-hidden="true"></i>登入<% end %></li>
+			<% else %>
+				<li>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" id="navbar-list-item-3">
+						<i class="fa fa-user" aria-hidden="true"></i><%= current_user.user_name %><span class="caret"></span>
+						<ul class="dropdown-menu">
+							<% if current_user.is_admin %>
+								<li><%= link_to("Admin Panel", admin_products_path) %></li>
+							<% end %>
+							<li><%= link_to(destroy_user_session_path, method: :delete) do %><i class="fa fa-sign-out" aria-hidden="true"></i>登出<% end %></li>
+						</ul>
+					</a>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+</nav>

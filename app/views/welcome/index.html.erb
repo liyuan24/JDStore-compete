@@ -1,0 +1,64 @@
+<div class="container-fluid welcome-container" style="margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0;">
+	<%= render "common/slideImage" %>
+	<div class="land-category-row clearfix">
+
+		<div class="land-category-column">
+			<h3 class="land-category-caption">阅读馆</h3>
+			<div class="land-category-image">
+				<%= link_to(books_path) do %>
+					<%= image_tag("book-2.jpg", style: "width: 100%;") %>
+				<% end %>
+			</div>
+		</div>
+		
+		
+		<div class="land-category-column">
+			<h3 class="land-category-caption">服装舍</h3>
+			<div class="land-category-image">
+				<%= link_to(dresses_path) do %>
+					<%= image_tag("dress-2.jpg", style: "width: 100%;") %>
+				<% end %>
+			</div>
+		</div>
+		
+		<div class="land-category-column">
+			<h3 class="land-category-caption">酷车场</h3>
+			<div class="land-category-image">
+				<%= link_to(cars_path) do %>
+					<%= image_tag("car-2.jpg", style: "width: 100%;") %>
+				<% end %>
+			</div>
+		</div>
+
+		<div class="land-category-column">
+			<h3 class="land-category-caption">红酒庄</h3>
+			<div class="land-category-image">
+				<%= link_to(wines_path) do %>
+					<%= image_tag("wine-2.jpg", style: "width: 100%;") %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="shopping-button-container">
+		<div class="shopping-button"><%= link_to("前往商场主页", products_path, class:"btn btn-success btn-block") %></div>
+	</div>
+<script type="text/javascript">
+	var slideIndex = 0;
+	showSlide();
+	function showSlide() {
+	    var i;
+	    var slides = document.getElementsByClassName("mySlide");
+	    var dots = document.getElementsByClassName("dot");
+	    var len = slides.length;
+	    for (i = 0; i < slides.length; i++) {
+	       slides[i].style.display = "none"; 
+	       dots[i].className = dots[i].className.replace(" active-slide", ""); 
+	    }
+	    slideIndex++;
+	    if (slideIndex> len) {slideIndex = 1;}    
+	    slides[slideIndex-1].style.display = "block";  
+	    dots[slideIndex-1].className += " active-slide";
+	    setTimeout(showSlide, 2000); // Change image every 2 seconds
+	}
+</script>

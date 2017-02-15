@@ -1,0 +1,16 @@
+<div class="col-md-8 col-md-offset-2"> 
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<td>#</td>
+				<td>图片</td>
+				<td>名称</td>
+				<td>价格</td>
+				<td>库存</td>
+			</tr>
+		</thead>
+		<tbody>
+			<%= render :partial => "product_table", :collection => @products, :as => :product %>
+		</tbody>
+	</table>
+</div>
