@@ -19,6 +19,20 @@ class OrdersController < ApplicationController
 		@product_lists = @order.product_lists
 	end
 
+	def pay_with_alipay
+		@order = Order.find_by_token(params[:id])
+		@order.set_payment_with!("alipay")
+		@order.pay!
+		redirect_to order_path(@order.token), notice: "支付成功！"
+	end
+
+	def pay_with_weixin
+		@order = Order.find_by_token(params[:id])
+		@order.set_payment_with!("weixin")
+		@order.pay!
+		redirect_to order_path(@order.token), notice: "支付成功！"
+	end
+
 	private
 
 	def order_params

@@ -33,7 +33,12 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :orders
+  resources :orders do
+    member do
+      post :pay_with_alipay
+      post :pay_with_weixin
+    end
+  end
 
   namespace :admin do
   	resources :products
